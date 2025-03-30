@@ -82,11 +82,11 @@ def solve_modes_with_gmsh(a=0.01, b=0.005, mode='TM', num_modes=6, filename='tes
             mat = np.array([[1, x[0], y[0]], [1, x[1], y[1]], [1, x[2], y[2]]])
             De = np.linalg.det(mat)
             Ae = abs(De / 2)
-            b = np.array([(y[1] - y[2]) / De, (y[2] - y[0]) / De, (y[0] - y[1]) / De])
-            c_ = np.array([(x[2] - x[1]) / De, (x[0] - x[2]) / De, (x[1] - x[0]) / De])
+            b = np.array([(y[1] - y[2]), (y[2] - y[0]), (y[0] - y[1])])#b = np.array([(y[1] - y[2]) / De, (y[2] - y[0]) / De, (y[0] - y[1]) / De])
+            c_ = np.array([(x[2] - x[1]), (x[0] - x[2]), (x[1] - x[0])])#c_ = np.array([(x[2] - x[1]) / De, (x[0] - x[2]) / De, (x[1] - x[0]) / De])
             for i in range(3):
                 for j in range(3):
-                    Se = (b[i] * b[j] + c_[i] * c_[j]) * Ae
+                    Se = (b[i] * b[j] + c_[i] * c_[j]) / (4 * Ae) #Se = (b[i] * b[j] + c_[i] * c_[j]) * Ae
                     Te = Ae / 6 if i == j else Ae / 12
                     if node_id[n[i]] != 0 and node_id[n[j]] != 0:
                         S[index[n[i]]-1, index[n[j]]-1] += Se
@@ -139,11 +139,11 @@ def solve_modes_with_gmsh(a=0.01, b=0.005, mode='TM', num_modes=6, filename='tes
             mat = np.array([[1, x[0], y[0]], [1, x[1], y[1]], [1, x[2], y[2]]])
             De = np.linalg.det(mat)
             Ae = abs(De / 2)
-            b = np.array([(y[1] - y[2]) / De, (y[2] - y[0]) / De, (y[0] - y[1]) / De])
-            c_ = np.array([(x[2] - x[1]) / De, (x[0] - x[2]) / De, (x[1] - x[0]) / De])
+            b = np.array([(y[1] - y[2]), (y[2] - y[0]), (y[0] - y[1])])#b = np.array([(y[1] - y[2]) / De, (y[2] - y[0]) / De, (y[0] - y[1]) / De])
+            c_ = np.array([(x[2] - x[1]), (x[0] - x[2]), (x[1] - x[0])])#c_ = np.array([(x[2] - x[1]) / De, (x[0] - x[2]) / De, (x[1] - x[0]) / De])
             for i in range(3):
                 for j in range(3):
-                    Se = (b[i] * b[j] + c_[i] * c_[j]) * Ae
+                    Se = (b[i] * b[j] + c_[i] * c_[j]) / (4 * Ae) #Se = (b[i] * b[j] + c_[i] * c_[j]) * Ae
                     Te = Ae / 6 if i == j else Ae / 12
                     S[n[i], n[j]] += Se
                     T[n[i], n[j]] += Te
@@ -202,10 +202,6 @@ def solve_modes_with_gmsh(a=0.01, b=0.005, mode='TM', num_modes=6, filename='tes
         fig_path = os.path.join(save_path, f"modo_{q+1}_{mode}.png")
         plt.savefig(fig_path, dpi=300)
         plt.close()
-
-
-
-
 
     # === Pasta para gráficos vetoriais ===
     save_path_quiver = f"out/img/quiver_{mode.lower()}_{filename}"
