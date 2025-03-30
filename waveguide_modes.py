@@ -91,7 +91,16 @@ def solve_modes_with_gmsh(a=0.01, b=0.005, mode='TM', num_modes=6, filename='tes
                     if node_id[n[i]] != 0 and node_id[n[j]] != 0:
                         S[index[n[i]]-1, index[n[j]]-1] += Se
                         T[index[n[i]]-1, index[n[j]]-1] += Te
+        from numpy.linalg import svd
 
+        s_K = svd(S.toarray(), compute_uv=False)
+        s_M = svd(T.toarray(), compute_uv=False)
+
+        cond_K = s_K[0] / s_K[-1]
+        cond_M = s_M[0] / s_M[-1]
+
+        print(f"Número de condição (SVD) de K: {cond_K:.2e}")
+        print(f"Número de condição (SVD) de M: {cond_M:.2e}")
         # Autovalores apenas nos nós internos
         vals, vecs = eigsh(S, k=num_modes+4, M=T, sigma=0, which='LM')
         # === Exporta autovalores, raiz e kc * r ===
