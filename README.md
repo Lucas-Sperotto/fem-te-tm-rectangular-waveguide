@@ -38,16 +38,16 @@ python rectangular_waveguide_modes.py
 
 A seguir estão os arquivos com explicações teóricas e metodológicas:
 
-- [Fundamentos Teóricos dos Modos TE/TM](/docs/teoria.md)
-- [Solução Analítica para Guia Retangular](/docs/solucao_analitica.md)
-- [Abordagem pelo Método dos Elementos Finitos](/docs/fem.md)
+- [Fundamentos Teóricos dos Modos TE/TM](/doc/teoria.md)
+- [Solução Analítica para Guia Retangular](/doc/solucao_analitica.md)
+- [Abordagem pelo Método dos Elementos Finitos](/doc/fem.md)
 
 ## 📊 Resultados Numéricos e Imagens
 
-- [Modos TE – Potencial Hz](/docs/resultados_te_potencial.md)
-- [Modos TE – Campo Transversal](/docs/resultados_te_transversal.md)
-- [Modos TM – Potencial Ez](/docs/resultados_tm_potencial.md)
-- [Modos TM – Campo Transversal](/docs/resultados_tm_transversal.md)
+- [Modos TE – Potencial Hz](/doc/resultados_te_potencial.md)
+- [Modos TE – Campo Transversal](/doc/resultados_te_transversal.md)
+- [Modos TM – Potencial Ez](/doc/resultados_tm_potencial.md)
+- [Modos TM – Campo Transversal](/doc/resultados_tm_transversal.md)
 
 ## 📜 Licença
 
