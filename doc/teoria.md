@@ -14,7 +14,7 @@ A análise é feita assumindo propagação na direção longitudinal ($` z `$), 
 Para ambos os casos (TE e TM), a componente longitudinal ($` \psi = E_z `$ ou $` H_z `$) obedece à equação:
 
 $`
-\nabla_t^2 \psi + k_c^2 \\psi = 0
+\nabla_t^2 \psi + k_c^2 \psi = 0
 `$
 
 onde $` \nabla_t^2 `$ é o laplaciano transversal e $` k_c `$ é o número de onda transversal.
