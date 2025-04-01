@@ -24,6 +24,24 @@ $`
 k_c = \pi \sqrt{ \left( \frac{m}{a} \right)^2 + \left( \frac{n}{b} \right)^2 }
 `$
 
+As componentes transversais dos campos são:
+
+$`
+E_x = -\frac{j\beta}{k_c^2} E_0 \frac{m\pi}{a} \cos\left( \frac{m\pi x}{a} \right) \sin\left( \frac{n\pi y}{b} \right)
+`$
+
+$`
+E_y = -\frac{j\beta}{k_c^2} E_0 \frac{n\pi}{b} \sin\left( \frac{m\pi x}{a} \right) \cos\left( \frac{n\pi y}{b} \right)
+`$
+
+$`
+H_x = \frac{j\omega \varepsilon}{k_c^2} E_0 \frac{n\pi}{b} \sin\left( \frac{m\pi x}{a} \right) \cos\left( \frac{n\pi y}{b} \right)
+`$
+
+$`
+H_y = -\frac{j\omega \varepsilon}{k_c^2} E_0 \frac{m\pi}{a} \cos\left( \frac{m\pi x}{a} \right) \sin\left( \frac{n\pi y}{b} \right)
+`$
+
 ---
 
 ## Modos TE (Transversais Elétricos)
@@ -42,6 +60,24 @@ $`
 k_c = \pi \sqrt{ \left( \frac{m}{a} \right)^2 + \left( \frac{n}{b} \right)^2 }
 `$
 
+As componentes transversais dos campos são:
+
+$`
+H_x = \frac{j\beta}{k_c^2} H_0 \frac{m\pi}{a} \sin\left( \frac{m\pi x}{a} \right) \cos\left( \frac{n\pi y}{b} \right)
+`$
+
+$`
+H_y = \frac{j\beta}{k_c^2} H_0 \frac{n\pi}{b} \cos\left( \frac{m\pi x}{a} \right) \sin\left( \frac{n\pi y}{b} \right)
+`$
+
+$`
+E_x = -\frac{j\omega \mu}{k_c^2} H_0 \frac{n\pi}{b} \cos\left( \frac{m\pi x}{a} \right) \sin\left( \frac{n\pi y}{b} \right)
+`$
+
+$`
+E_y = \frac{j\omega \mu}{k_c^2} H_0 \frac{m\pi}{a} \sin\left( \frac{m\pi x}{a} \right) \cos\left( \frac{n\pi y}{b} \right)
+`$
+
 ---
 
 ## Frequência de Corte
@@ -58,3 +94,4 @@ onde:
 - $` c `$ é a velocidade da luz no vácuo.
 
 Essas expressões fornecem os valores teóricos que podem ser comparados com os obtidos numericamente pelo método dos elementos finitos (FEM).
+
